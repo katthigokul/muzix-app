@@ -1,0 +1,7 @@
+/home/test/IdeaProjects/Muzix-App/User-Service/src/main/java/com/stackroute/service/UserServiceImpl.java
+/home/test/IdeaProjects/Muzix-App/User-Service/src/main/java/com/stackroute/service/UserService.java
+/home/test/IdeaProjects/Muzix-App/User-Service/src/main/java/com/stackroute/UserServiceApplication.java
+/home/test/IdeaProjects/Muzix-App/User-Service/src/main/java/com/stackroute/domain/User.java
+/home/test/IdeaProjects/Muzix-App/User-Service/src/main/java/com/stackroute/repository/UserRepository.java
+/home/test/IdeaProjects/Muzix-App/User-Service/src/main/java/com/stackroute/exceptions/UserAlreadyExistsException.java
+/home/test/IdeaProjects/Muzix-App/User-Service/src/main/java/com/stackroute/controller/UserController.java

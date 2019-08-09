@@ -1,0 +1,12 @@
+#version: '3.5'
+#services:
+#  mongo:
+#    image:mongo:mongo-docker
+#  ports:
+#    -27017:27017
+#    container_name:docker-mongodb
+#  network_mode:host
+#  enivronment:
+#MONGODB_DATABASE: track
+#
+#
