@@ -1,0 +1,65 @@
+version: "3"
+services:
+  #  Container for TrackService
+  #  docker run -d --name track-service-Mongo -p 8082:8082  <image_name>
+  track-service:
+    build: Track-service/.
+    container_name: track-service-Mongo
+    network_mode: host
+    hostname: localhost
+    depends_on:
+      - mongodb
+      - eureka-server
+      - config-server
+    ports:
+      - 8082:8082
+
+  #  Container for ApiGateway
+  #  docker run -d --name api-gateway -p 8090:8090  <image_name>
+  api-gateway:
+    build: APIGatewayService/.
+    container_name: api-gateway
+    network_mode: host
+    hostname: localhost
+    ports:
+      - 8000:8000
+
+  #  Container for ConfigServer
+  #  docker run -d --name config-server -p 8891:8891  <image_name>
+  config-server:
+    build: config-server/.
+    network_mode: host
+    hostname: localhost
+    container_name: config-server
+    ports:
+      - 8891:8891
+
+  #  Container for EurekaServer
+  #  docker run -d --name eureka-server -p 8080:8080  <image_name>
+  eureka-server:
+    build: eureka-server/.
+    container_name: eureka-server
+    network_mode: host
+    hostname: localhost
+    ports:
+      - 7777:7777
+
+  #  Container for userService
+  # docker run -d --name user-service -p 8081:8081 <image>
+  user-service:
+    build: User-Service/.
+    network_mode: host
+    hostname: localhost
+    container_name: user-service
+    ports:
+      - 8080:8080
+
+  mongodb:
+    image: mongo
+    container_name: mongoDB
+    network_mode: host
+    hostname: localhost
+    ports:
+      - 27017:27017
+    volumes:
+      - /data/:/data/db
